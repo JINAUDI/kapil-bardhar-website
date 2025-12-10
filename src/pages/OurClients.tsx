@@ -125,8 +125,8 @@ const OurClients = () => {
               <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mt-6"></div>
             </div>
 
-            {/* Three-row alternating marquee */}
-            <div className="space-y-6">
+            {/* Desktop/Tablet: Three-row alternating marquee */}
+            <div className="hidden md:block space-y-6">
               <LogoRow items={row1} direction="left" duration={46} ariaLabel="Top row of client logos scrolling left" />
               <LogoRow
                 items={row2}
@@ -140,6 +140,33 @@ const OurClients = () => {
                 duration={52}
                 ariaLabel="Bottom row of client logos scrolling left"
               />
+            </div>
+
+            {/* Mobile: 2-column grid layout */}
+            <div className="md:hidden grid grid-cols-2 gap-4 px-4">
+              {logos.map((client) => {
+                const hasFailed = failedImages.has(client.logo)
+                return (
+                  <div
+                    key={client.name}
+                    className="flex items-center justify-center bg-card rounded-lg p-3 shadow-sm border border-border aspect-[4/3]"
+                  >
+                    {!hasFailed ? (
+                      <img
+                        src={client.logo}
+                        alt={`${client.name} logo`}
+                        className="max-h-16 max-w-full w-auto object-contain"
+                        onError={() => handleImageError(client.logo)}
+                      />
+                    ) : (
+                      <div className="w-full h-full flex flex-col items-center justify-center">
+                        <Building2 className="w-8 h-8 text-primary mb-2" aria-hidden="true" />
+                        <span className="text-xs text-center text-foreground font-medium line-clamp-2">{client.name}</span>
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
             </div>
 
             {/* Trust Statement */}
