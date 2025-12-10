@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -9,18 +10,23 @@ interface NavigationProps {
 
 const Navigation = ({ activeSection, onNavigate }: NavigationProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navItems = [
-    { id: "home", label: "Home" },
-    { id: "legacy", label: "Our Legacy" },
-    { id: "team", label: "Our Team" },
-    { id: "practice", label: "Practice Areas" },
-    { id: "clients", label: "Our Clients" },
-    { id: "contact", label: "Contact Us" },
+    { id: "home", label: "Home", route: null },
+    { id: "legacy", label: "Our Legacy", route: "/our-legacy" },
+    { id: "team", label: "Our Team", route: null },
+    { id: "practice", label: "Practice Areas", route: null },
+    { id: "clients", label: "Our Clients", route: null },
+    { id: "judgments", label: "Judgments", route: null },
   ];
 
-  const handleNavClick = (id: string) => {
-    onNavigate(id);
+  const handleNavClick = (id: string, route: string | null) => {
+    if (route) {
+      navigate(route);
+    } else {
+      onNavigate(id);
+    }
     setMobileMenuOpen(false);
   };
 
@@ -47,7 +53,7 @@ const Navigation = ({ activeSection, onNavigate }: NavigationProps) => {
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => handleNavClick(item.id)}
+                onClick={() => handleNavClick(item.id, item.route)}
                 className={`px-4 py-2 rounded-md transition-colors ${
                   activeSection === item.id
                     ? "text-primary font-medium"
@@ -85,7 +91,7 @@ const Navigation = ({ activeSection, onNavigate }: NavigationProps) => {
               {navItems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => handleNavClick(item.id)}
+                  onClick={() => handleNavClick(item.id, item.route)}
                   className={`px-4 py-3 text-left rounded-md transition-colors ${
                     activeSection === item.id
                       ? "bg-secondary text-primary font-medium"

@@ -1,4 +1,4 @@
-import { Scale, Home, Briefcase, Users, Building, FileText, Landmark, DollarSign } from "lucide-react";
+import { Scale, Home, Briefcase, Users, Building, FileText, Landmark, DollarSign, Gavel, Receipt, ShieldCheck, Building2 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const PracticeAreasSection = () => {
@@ -42,13 +42,14 @@ const PracticeAreasSection = () => {
     {
       icon: Users,
       title: "Family Law",
-      description: "Sensitive handling of family matters including matrimonial disputes, custody, and succession.",
+      description: "Sensitive handling of family matters including matrimonial disputes, custody, succession, and protection orders.",
       experts: "Compassionate representation with focus on amicable resolution",
       specialties: [
-        "Divorce & Separation",
-        "Child Custody",
-        "Maintenance",
-        "Succession",
+        "Divorce & Separation (Contested/Mutual Consent)",
+        "Child Custody, Visitation & Guardianship",
+        "Alimony & Child Maintenance",
+        "Marital Asset Division",
+        "Domestic Violence Protection Orders",
       ],
     },
     {
@@ -76,15 +77,16 @@ const PracticeAreasSection = () => {
       ],
     },
     {
-      icon: Home,
-      title: "Property Law",
-      description: "Complete property legal services including conveyancing, title verification, and property disputes.",
-      experts: "Thorough legal due diligence and property documentation",
+      icon: Building2,
+      title: "Real Estate Law",
+      description: "Complete real estate legal services including due diligence, documentation, RERA compliance, and dispute resolution.",
+      experts: "Thorough legal due diligence and property documentation expertise",
       specialties: [
-        "Property Transactions",
-        "Title Verification",
-        "Real Estate Law",
-        "Property Disputes",
+        "Title Verification & Property Search",
+        "Sale Deeds & Lease Agreements",
+        "RERA Dispute Representation",
+        "Ownership & Title Disputes",
+        "Boundary & Landlord-Tenant Disputes",
       ],
     },
     {
@@ -97,6 +99,42 @@ const PracticeAreasSection = () => {
         "Public Interest",
         "Constitutional Law",
         "Judicial Review",
+      ],
+    },
+    {
+      icon: Gavel,
+      title: "Arbitration",
+      description: "Expert representation in commercial arbitration, construction disputes, and enforcement of arbitral awards.",
+      experts: "Experienced in handling complex arbitration matters under various institutional rules",
+      specialties: [
+        "Commercial Disputes (Breach of Contract)",
+        "JV & Shareholder Disputes",
+        "Construction Claims (Delays, Cost Overruns, Defects)",
+        "Enforcement/Setting Aside of Arbitral Awards",
+      ],
+    },
+    {
+      icon: Receipt,
+      title: "Negotiable Instruments",
+      description: "Comprehensive handling of cheque bounce cases, recovery litigation, and legal notice drafting under N.I. Act.",
+      experts: "Specialized in Section 138 cases and recovery proceedings",
+      specialties: [
+        "Cheque Bounce Cases (Section 138 N.I. Act)",
+        "Promissory Notes & Bills of Exchange Recovery",
+        "Drafting & Serving Demand Notices",
+        "Criminal & Civil Recovery Proceedings",
+      ],
+    },
+    {
+      icon: ShieldCheck,
+      title: "Consumer Protection",
+      description: "Expert representation in consumer disputes involving service deficiency, defective products, and real estate complaints.",
+      experts: "Successful track record before Consumer Forums and Commissions",
+      specialties: [
+        "Insurance, Banking & Medical Negligence",
+        "Defective Products (Compensation/Refund)",
+        "Real Estate Delays & Construction Defects",
+        "E-commerce & Service Deficiency Claims",
       ],
     },
   ];
@@ -118,7 +156,7 @@ const PracticeAreasSection = () => {
           </div>
 
           {/* Practice Areas Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {practiceAreas.map((area, index) => (
               <Card
                 key={index}

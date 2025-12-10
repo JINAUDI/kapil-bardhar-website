@@ -4,54 +4,34 @@ import { Building2 } from "lucide-react"
 import { useMemo, useState } from "react"
 
 const ClientsSection = () => {
-  const [errorUrls, setErrorUrls] = useState<Set<string>>(new Set())
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set())
 
   const logos = useMemo(
     () => [
-      { name: "Jaipur Vidyut Vitran Nigam Limited (JVVNL)", logo: "https://jvvnl.org/images/logo.png" },
-      {
-        name: "Rajasthan Public Service Commission (RPSC)",
-        logo: "https://rpsc.rajasthan.gov.in/images/rpsc-logo.png",
-      },
-      { name: "Punjab National Bank (PNB)", logo: "https://www.pnbindia.in/images/PNB-Logo.png" },
-      { name: "Oriental Insurance Company Ltd", logo: "https://orientalinsurance.org.in/documents/39423/0/logo.png" },
-      { name: "Central Electricity Regulation Commission (CERC)", logo: "https://cercind.gov.in/images/cerc-logo.png" },
-      { name: "TATA GY Batteries", logo: "https://www.tatagreenbatteries.com/images/tata-green-logo.png" },
-      { name: "SBI General Insurance", logo: "https://www.sbigeneral.in/portal/sbi-general-insurance-logo.png" },
-      {
-        name: "Reliance General Insurance",
-        logo: "https://www.reliancegeneral.co.in/Common/Images/reliance-general-insurance-logo.png",
-      },
-      {
-        name: "Universal Sompo General Insurance",
-        logo: "https://www.universalsompo.com/images/universal-sompo-logo.png",
-      },
-      { name: "Pandit Deen Dayal Upadhyay University Sikar", logo: "https://www.pduuds.ac.in/images/logo.png" },
-      {
-        name: "Lachoo Memorial College of Science and Technology",
-        logo: "https://www.lachoo.edu.in/images/lachoo-logo.png",
-      },
-      {
-        name: "TATA Motors",
-        logo: "https://www.tatamotors.com/wp-content/themes/tata-motors/img/tata-motors-logo.png",
-      },
-      {
-        name: "Jaipur Development Authority (JDA)",
-        logo: "https://jda.urban.rajasthan.gov.in/content/dam/doitassets/jda/images/jda-logo.png",
-      },
-      { name: "HG Infra Engineering", logo: "https://www.hginfra.com/images/hg-infra-logo.png" },
-      { name: "Varun Beverages", logo: "https://www.varunbeverages.com/images/varun-beverages-logo.png" },
-      { name: "Programmers Pvt Ltd", logo: "https://www.programmers.io/images/logo.png" },
+      { name: "JVVNL", logo: "/partners/jvvnl.png" },
+      { name: "RPSC", logo: "/partners/rpsc.png" },
+      { name: "Oriental Insurance", logo: "/partners/oriental-insurance.png" },
+      { name: "CERC", logo: "/partners/cerc.png" },
+      { name: "TATA Batteries", logo: "/partners/tata-batteries.png" },
+      { name: "SBI General", logo: "/partners/sbi-general.png" },
+      { name: "Reliance General", logo: "/partners/reliance-general.png" },
+      { name: "Universal Sompo", logo: "/partners/universal-sompo.png" },
+      { name: "Shekhawati University", logo: "/partners/shekhawati-university.png" },
+      { name: "Lachoo College", logo: "/partners/lachoo-college.png" },
+      { name: "TATA Motors", logo: "/partners/tata-motors.png" },
+      { name: "JDA", logo: "/partners/jda.png" },
+      { name: "HG Infra", logo: "/partners/hg-infra.png" },
+      { name: "Varun Beverages", logo: "/partners/varun-beverages.png" },
+      { name: "Programmers.io", logo: "/partners/programmers.png" },
+      { name: "The Palace", logo: "/partners/the-palace.png" },
+      { name: "Manglam BDL", logo: "/partners/manglam-bdl.png" },
+      { name: "Khandaka Jewellers", logo: "/partners/khandaka-jewellers.png" },
     ],
     [],
   )
 
-  const handleError = (url: string) => {
-    setErrorUrls((prev) => {
-      const next = new Set(prev)
-      next.add(url)
-      return next
-    })
+  const handleImageError = (logo: string) => {
+    setFailedImages(prev => new Set([...prev, logo]))
   }
 
   // Helper to render one row track (duplicated for seamless loop)
@@ -76,28 +56,26 @@ const ClientsSection = () => {
           aria-label={ariaLabel}
         >
           {[...items, ...items].map((client, idx) => {
-            // Mark the second copy as aria-hidden to avoid duplication for screen readers
             const isDuplicate = idx >= items.length
-            const failed = errorUrls.has(client.logo)
+            const hasFailed = failedImages.has(client.logo)
 
             return (
               <div
-                key={`${client.logo}-${idx}`}
-                className="flex items-center justify-center h-24 w-[180px] rounded-md"
+                key={`${client.name}-${idx}`}
+                className="flex items-center justify-center h-24 w-[180px] rounded-md mx-2"
                 aria-hidden={isDuplicate}
               >
-                {!failed ? (
+                {!hasFailed ? (
                   <img
-                    src={client.logo || "/placeholder.svg"}
+                    src={client.logo}
                     alt={`${client.name} logo`}
-                    loading="lazy"
-                    className="max-h-12 w-auto object-contain logo-img grayscale"
-                    onError={() => handleError(client.logo)}
+                    className="max-h-16 max-w-[160px] w-auto object-contain hover:scale-110 transition-all duration-300"
+                    onError={() => handleImageError(client.logo)}
                   />
                 ) : (
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Building2 className="w-6 h-6 text-primary" aria-hidden="true" />
-                    <span className="sr-only">{`${client.name} logo unavailable`}</span>
+                  <div className="w-full h-full rounded-lg bg-card border border-border flex flex-col items-center justify-center p-3 hover:border-primary hover:bg-primary/5 transition-all duration-300">
+                    <Building2 className="w-8 h-8 text-primary mb-2" aria-hidden="true" />
+                    <span className="text-sm text-center text-foreground font-medium line-clamp-2">{client.name}</span>
                   </div>
                 )}
               </div>
@@ -108,7 +86,7 @@ const ClientsSection = () => {
     )
   }
 
-  // Create three rows. We can vary starting slices for subtle variety.
+  // Create three rows
   const row1 = logos
   const row2 = [...logos.slice(8), ...logos.slice(0, 8)]
   const row3 = [...logos.slice(4), ...logos.slice(0, 4)]

@@ -5,7 +5,7 @@ import AboutSection from "@/components/AboutSection";
 import PracticeAreasSection from "@/components/PracticeAreasSection";
 import TeamSection from "@/components/TeamSection";
 import ClientsSection from "@/components/ClientsSection";
-import LegacySection from "@/components/LegacySection";
+import JudgmentsSection from "@/components/JudgmentsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -31,7 +31,7 @@ const Index = () => {
   // Update active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "practice", "team", "clients", "legacy", "contact"];
+      const sections = ["home", "about", "practice", "team", "clients", "judgments", "contact"];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -75,8 +75,8 @@ const Index = () => {
           <ClientsSection />
         </div>
         
-        <div id="legacy">
-          <LegacySection />
+        <div id="judgments">
+          <JudgmentsSection />
         </div>
         
         <div id="contact">

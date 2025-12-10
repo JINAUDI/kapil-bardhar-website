@@ -1,4 +1,4 @@
-import { History, Users, BookOpen, Award, Heart, Scale } from "lucide-react";
+import { History, Users, BookOpen, Award, Heart, Scale, Book, Feather } from "lucide-react";
 import legacyImage from "@/assets/legacy-image.jpg";
 
 const LegacySection = () => {
@@ -90,6 +90,89 @@ const LegacySection = () => {
                 Served as MLA for Hawamahal constituency (1962-1972), defeating political
                 heavyweights and serving on the Law Commission.
               </p>
+            </div>
+          </div>
+
+          {/* Books by Pt. D.L. Bardhar */}
+          <div className="mt-16 bg-card border border-border rounded-lg p-8">
+            <div className="flex items-center gap-3 mb-8">
+              <Book className="w-8 h-8 text-primary" />
+              <h3 className="text-2xl font-bold text-foreground">
+                Books by Pt. Durga Lal Bardhar
+              </h3>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Law Books */}
+              <div className="space-y-4">
+                <div className="flex items-center gap-2 mb-4">
+                  <Scale className="w-6 h-6 text-primary" />
+                  <h4 className="text-xl font-semibold text-foreground">Law Books</h4>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Pt. Durga Lal Bardhar authored several authoritative texts on Revenue Laws that remain essential references for legal practitioners across Rajasthan.
+                </p>
+                <div className="space-y-3">
+                  <div className="bg-secondary/30 border border-border rounded-lg p-4 hover:border-primary transition-all">
+                    <div className="flex items-start gap-3">
+                      <BookOpen className="w-10 h-10 text-primary flex-shrink-0" />
+                      <div>
+                        <h5 className="font-semibold text-foreground">Rajasthan Tenancy Act</h5>
+                        <p className="text-sm text-muted-foreground">Comprehensive commentary on the Rajasthan Tenancy Act</p>
+                        <p className="text-xs text-primary mt-1">Publisher: Dominion Law Book Depot</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-secondary/30 border border-border rounded-lg p-4 hover:border-primary transition-all">
+                    <div className="flex items-start gap-3">
+                      <BookOpen className="w-10 h-10 text-primary flex-shrink-0" />
+                      <div>
+                        <h5 className="font-semibold text-foreground">Rajasthan Land Revenue Act</h5>
+                        <p className="text-sm text-muted-foreground">Authoritative guide on Land Revenue laws of Rajasthan</p>
+                        <p className="text-xs text-primary mt-1">Publisher: Dominion Law Book Depot</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-secondary/30 border border-border rounded-lg p-4 hover:border-primary transition-all">
+                    <div className="flex items-start gap-3">
+                      <BookOpen className="w-10 h-10 text-primary flex-shrink-0" />
+                      <div>
+                        <h5 className="font-semibold text-foreground">Revenue Law Digests & Commentaries</h5>
+                        <p className="text-sm text-muted-foreground">Collected digests and case commentaries on Revenue Law matters</p>
+                        <p className="text-xs text-primary mt-1">Recognized as superior references in the field</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Poetry Books */}
+              <div className="space-y-4">
+                <div className="flex items-center gap-2 mb-4">
+                  <Feather className="w-6 h-6 text-primary" />
+                  <h4 className="text-xl font-semibold text-foreground">Poetry & Literary Works</h4>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Beyond his legal expertise, Pt. Durga Lal Bardhar was also a distinguished poet, expressing his thoughts and philosophy through verse.
+                </p>
+                <div className="space-y-3">
+                  <div className="bg-secondary/30 border border-border rounded-lg p-4 hover:border-primary transition-all">
+                    <div className="flex items-start gap-3">
+                      <Feather className="w-10 h-10 text-primary flex-shrink-0" />
+                      <div>
+                        <h5 className="font-semibold text-foreground">Poetry Collections</h5>
+                        <p className="text-sm text-muted-foreground">A collection of Hindi poetry reflecting his deep understanding of society, justice, and human values</p>
+                        <p className="text-xs text-primary mt-1">Celebrated for literary merit and philosophical depth</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-primary/10 border border-primary/30 rounded-lg p-4 mt-6">
+                  <p className="text-sm text-muted-foreground italic">
+                    "His literary contributions complemented his legal career, showing a multi-faceted personality dedicated to both justice and the arts."
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 

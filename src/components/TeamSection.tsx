@@ -1,17 +1,19 @@
 "use client"
 
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Award, BookOpen, Scale, Building } from "lucide-react"
+import { Award, BookOpen, Scale, Building, Briefcase, Users } from "lucide-react"
 import lawyerPlaceholder from "@/assets/lawyer-placeholder.jpg"
 import girirajBardhar from "@/assets/giriraj-bardhar.jpg"
-import goverdhanBardhar from "@/assets/goverdhan-bardhar.jpg"
 import kapilBardhar from "@/assets/kapil-bardhar.jpg"
+import goverdhanBardhar from "@/assets/goverdhan-bardhar.jpg"
 
 const TeamSection = () => {
   const [selectedLawyer, setSelectedLawyer] = useState<number | null>(null)
+  const navigate = useNavigate()
 
   const team = [
     {
@@ -46,7 +48,7 @@ const TeamSection = () => {
         overview:
           "Gyaneshwar Bardhar, the elder son of Durga Lal Bardhar, enrolled as an Advocate on August 12, 1972 with the Bar Council of Rajasthan and has been in continuous practice for 53 years.",
         achievements: [
-          "Enrolled as Advocate: August 12, 1972 (R/108/1972)",
+          "Enrolled as Advocate: August 12, 1972",
           "Associated with Late Shri Durga Lal Bardhar (1972-1978)",
           "Secretary, District Bar Association Collectrate (1989)",
           "President, District Bar Association Collectrate (1991)",
@@ -73,7 +75,7 @@ const TeamSection = () => {
         overview:
           "Giriraj Bardhar, son of Durga Lal Bardhar, enrolled as an Advocate on October 15, 1976 with the Bar Council of Rajasthan and has 49 years of standing.",
         achievements: [
-          "Enrolled as Advocate: October 15, 1976 (R/540/1976)",
+          "Enrolled as Advocate: October 15, 1976",
           "Standing Counsel for Jaipur Development Authority (1983-85)",
           "Panel Lawyer, Oriental Insurance Company (2001-present)",
           "Panel Lawyer, New India Assurance Company (2001-present)",
@@ -92,26 +94,6 @@ const TeamSection = () => {
       },
     },
     {
-      name: "Justice (Retd.) Goverdhan Bardhar",
-      title: "Retired High Court Judge",
-      designation: "Rajasthan High Court",
-      image: goverdhanBardhar,
-      shortBio:
-        "Retired High Court Judge of the Rajasthan High Court, adding a distinguished judicial perspective to the firm's legacy.",
-      fullBio: {
-        overview:
-          "Justice Goverdhan Bardhar served with distinction as a High Court Judge of the Rajasthan High Court, bringing an exceptional judicial perspective to the firm's legacy.",
-        achievements: [
-          "Served as High Court Judge, Rajasthan High Court",
-          "Contributed significantly to judicial reforms and legal precedents",
-          "Known for landmark judgments in civil and constitutional matters",
-          "Mentored numerous legal professionals throughout his career",
-        ],
-        legacy:
-          "His judicial experience and wisdom continue to guide the firm's approach to legal practice and ethics.",
-      },
-    },
-    {
       name: "Kapil Bardhar",
       title: "Managing Partner",
       designation: "B.B.A.-LL.B. (Symbiosis) - 14 Years Standing",
@@ -121,21 +103,23 @@ const TeamSection = () => {
         overview:
           "Kapil Bardhar, son of Giriraj Bardhar, is a dynamic third-generation lawyer with extensive litigation experience. Graduated from Symbiosis Law School, Pune in 2011.",
         achievements: [
-          "Enrolled as Advocate: 2011 (R/1002/2011)",
+          "Enrolled as Advocate: 2011",
           "Started chamber practice with Senior Advocate Shri Rajendra Narain Mathur",
           "Managing Partner, Bardhar & Bardhar Associates",
           "Core Partner, Bardhar and Kaushik Law Firm (Team of 11 associates)",
         ],
+        panelStandingCounsel: [
+          "Standing Counsel - Jaipur Vidyut Vitran Nigam Limited (JVVNL)",
+          "Standing Counsel - Rajasthan Public Service Commission (RPSC)",
+          "Standing Counsel - Central Electricity Regulation Commission (CERC)",
+          "Standing Counsel - Pandit Deen Dayal Upadhyay University Sikar",
+          "Standing Counsel - Jaipur Development Authority (JDA)",
+        ],
         panelLawyer: [
-          "Jaipur Vidyut Vitran Nigam Limited (JVVNL)",
-          "Rajasthan Public Service Commission (RPSC)",
           "Punjab National Bank (PNB)",
-          "Pandit Deen Dayal Upadhyay University Sikar",
           "Oriental Insurance Company Ltd",
-          "Central Electricity Regulation Commission (CERC)",
           "TATA GY Batteries, Pune",
           "TATA Motors",
-          "Jaipur Development Authority (JDA)",
           "HG Infra Engineering (P) LTD",
           "Varun Beverages",
           "SBI General Insurance",
@@ -144,6 +128,25 @@ const TeamSection = () => {
         specialization: "Writs, Civil, Service, Arbitration, Banking, Property, and various miscellaneous matters",
         legacy:
           "Building upon a rich family legacy dating back to 1950, handling comprehensive litigation with modern approach",
+      },
+    },
+    {
+      name: "Justice (Retd.) Goverdhan Bardhar",
+      title: "Retired High Court Judge",
+      designation: "Former Judge, Rajasthan High Court",
+      image: goverdhanBardhar,
+      shortBio: "A respected jurist from the Bardhar legal lineage who served as a Judge of the Rajasthan High Court.",
+      fullBio: {
+        overview:
+          "Justice (Retd.) Goverdhan Bardhar represents the judicial branch of the Bardhar family's distinguished legal legacy. His elevation to the bench of the Rajasthan High Court stands as a testament to the family's multi-generational impact on the Indian legal system.",
+        achievements: [
+          "Served as a Judge of the Rajasthan High Court",
+          "Represents the judicial branch of the Bardhar family's legal legacy",
+          "Part of the multi-generational impact described as a 'Judicial Institute'",
+          "Carried forward the family's tradition of judicial excellence",
+        ],
+        legacy:
+          "Justice Goverdhan Bardhar's distinguished judicial career exemplifies the Bardhar family's profound influence on the legal landscape of Rajasthan, contributing to the family being recognized as a 'Judicial Institute'.",
       },
     },
   ]
@@ -164,7 +167,7 @@ const TeamSection = () => {
           </div>
 
           {/* Team Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {team.map((lawyer, index) => (
               <Card
                 key={index}
@@ -245,6 +248,23 @@ const TeamSection = () => {
                     </div>
                   )}
 
+                  {team[selectedLawyer].fullBio.panelStandingCounsel && (
+                    <div>
+                      <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
+                        <Briefcase className="w-5 h-5 text-primary" />
+                        Panel & Standing Counsel
+                      </h3>
+                      <div className="grid sm:grid-cols-1 gap-2">
+                        {team[selectedLawyer].fullBio.panelStandingCounsel.map((panel, idx) => (
+                          <p key={idx} className="text-sm text-muted-foreground flex items-start">
+                            <span className="text-primary mr-2">•</span>
+                            {panel}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   {team[selectedLawyer].fullBio.panelLawyer && (
                     <div>
                       <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
@@ -316,6 +336,17 @@ const TeamSection = () => {
               </DialogContent>
             </Dialog>
           )}
+
+          {/* View More Button */}
+          <div className="text-center mt-12">
+            <Button
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary/10 bg-transparent px-8 py-3"
+              onClick={() => navigate("/our-teams")}
+            >
+              View Our Teams
+            </Button>
+          </div>
         </div>
       </div>
     </section>

@@ -45,6 +45,11 @@ const Footer = () => {
                   Practice Areas
                 </a>
               </li>
+              <li>
+                <a href="#judgments" className="hover:text-primary transition-colors">
+                  Judgments & Articles
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -64,12 +69,21 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>B-18/F, Bardhar Lane</li>
-              <li>Bani Park, Jaipur - 302016</li>
+              <li>B-18 – F, Bardhar Lane</li>
+              <li>Todarmal Marg, Near Kotak Mahindra Bank</li>
+              <li>Banipark, Jaipur – 302016</li>
               <li>Rajasthan, India</li>
               <li className="pt-2">
-                <a href="tel:01412200967" className="hover:text-primary transition-colors">
-                  0141-2200967
+                <a href="tel:+918233065575" className="hover:text-primary transition-colors">
+                  +91-8233065575
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:kapilbardhar@gmail.com"
+                  className="hover:text-primary transition-colors"
+                >
+                  kapilbardhar@gmail.com
                 </a>
               </li>
               <li>
@@ -88,9 +102,9 @@ const Footer = () => {
           <p>
             © {new Date().getFullYear()} Bardhar & Bardhar Associates. All rights reserved.
           </p>
-          <p className="mt-2">
-            Disclaimer: This website is for informational purposes only and does not constitute
-            legal advice.
+          <p className="mt-4 p-4 bg-secondary/30 rounded-lg border border-border">
+            <strong>Disclaimer:</strong> This website is for informational purposes only and does not constitute
+            legal advice. Please consult with our attorneys for specific legal matters.
           </p>
         </div>
       </div>

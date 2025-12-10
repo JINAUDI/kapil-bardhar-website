@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -56,11 +56,11 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Office Address</h4>
                     <p className="text-muted-foreground">
-                      B-18/F, Bardhar Lane, Todarmal Marg
+                      B-18 – F, Bardhar Lane, Todarmal Marg
                       <br />
-                      Bani Park, Jaipur - 302016
+                      Near Kotak Mahindra Bank, Banipark
                       <br />
-                      Rajasthan, India
+                      Jaipur, Rajasthan – 302016
                     </p>
                   </div>
                 </div>
@@ -68,10 +68,8 @@ const ContactSection = () => {
                 <div className="flex items-start gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary transition-all">
                   <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">Phone Numbers</h4>
+                    <h4 className="font-semibold text-foreground mb-1">Phone Number</h4>
                     <p className="text-muted-foreground">
-                      Office: <a href="tel:01412200967" className="hover:text-primary">0141-2200967</a>
-                      <br />
                       Mobile:{" "}
                       <a href="tel:+918233065575" className="hover:text-primary">
                         +91-8233065575
@@ -85,15 +83,15 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Email Addresses</h4>
                     <p className="text-muted-foreground">
+                      <a href="mailto:kapilbardhar@gmail.com" className="hover:text-primary">
+                        kapilbardhar@gmail.com
+                      </a>
+                      <br />
                       <a
                         href="mailto:bardharandbardhar@gmail.com"
                         className="hover:text-primary"
                       >
                         bardharandbardhar@gmail.com
-                      </a>
-                      <br />
-                      <a href="mailto:kapilbardhar@gmail.com" className="hover:text-primary">
-                        kapilbardhar@gmail.com
                       </a>
                     </p>
                   </div>
@@ -104,27 +102,38 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Office Hours</h4>
                     <p className="text-muted-foreground">
-                      Monday - Friday: 10:00 AM - 6:00 PM
+                      Monday – Friday: 10:00 AM – 9:00 PM
                       <br />
-                      Saturday: 10:00 AM - 2:00 PM
+                      Saturday: 10:00 AM – 5:00 PM
                       <br />
-                      Sunday: Closed
+                      Sunday: 11:00 AM – 2:00 PM
                     </p>
                   </div>
                 </div>
+
+                {/* WhatsApp Button */}
+                <a
+                  href="https://wa.me/918233065575"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-3 p-4 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-lg hover:opacity-90 transition-all shadow-[var(--shadow-glow)]"
+                >
+                  <MessageCircle className="w-6 h-6" />
+                  <span className="font-semibold">Chat with us on WhatsApp</span>
+                </a>
               </div>
 
               {/* Map */}
               <div className="bg-card border border-border rounded-lg overflow-hidden h-64">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.9!2d75.8!3d26.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDU0JzAwLjAiTiA3NcKwNDgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.5!2d75.7856!3d26.9344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db3f5a02b8df3%3A0x7e0b14c09f16a4d8!2sBardhar%20Advocates!5e0!3m2!1sen!2sin!4v1701234567890!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Office Location"
+                  title="Bardhar Advocates Location"
                 ></iframe>
               </div>
             </div>
