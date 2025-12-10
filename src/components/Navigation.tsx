@@ -17,7 +17,7 @@ const Navigation = ({ activeSection, onNavigate }: NavigationProps) => {
     { id: "legacy", label: "Our Legacy", route: "/our-legacy" },
     { id: "team", label: "Our Team", route: null },
     { id: "practice", label: "Practice Areas", route: null },
-    { id: "clients", label: "Our Clients", route: null },
+    { id: "clients", label: "Our Clients", route: "/our-clients" },
     { id: "judgments", label: "Judgments", route: null },
   ];
 

@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -10,6 +12,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState("home");
 
   const handleNavigate = (section: string) => {
@@ -72,7 +75,27 @@ const Index = () => {
         </div>
         
         <div id="clients">
-          <ClientsSection />
+          {/* Desktop/Tablet: Show full clients section */}
+          <div className="hidden md:block">
+            <ClientsSection />
+          </div>
+          {/* Mobile: Show button to view clients page */}
+          <div className="md:hidden py-16 bg-background">
+            <div className="container mx-auto px-4 text-center">
+              <h2 className="text-3xl font-bold text-foreground mb-4">
+                Our <span className="text-primary">Esteemed Clients</span>
+              </h2>
+              <p className="text-muted-foreground mb-8 max-w-md mx-auto">
+                Representing Industry Leaders and Government Institutions
+              </p>
+              <Button
+                onClick={() => navigate("/our-clients")}
+                className="bg-gradient-to-r from-primary to-accent text-primary-foreground hover:opacity-90 shadow-[var(--shadow-glow)] px-8 py-3"
+              >
+                View Our Clients
+              </Button>
+            </div>
+          </div>
         </div>
         
         <div id="judgments">
