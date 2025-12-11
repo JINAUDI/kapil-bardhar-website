@@ -89,14 +89,30 @@ All colors MUST be HSL.
 
 /* iOS Safari specific fixes */
 @supports (-webkit-touch-callout: none) {
-  /* Fix for iOS viewport height issue */
+  /* CSS custom property for dynamic viewport height (set by JS) */
+  :root {
+    --vh: 1vh;
+  }
+
+  /* Fix for iOS viewport height issue using dvh with fallback */
   .min-h-screen {
-    min-height: -webkit-fill-available;
+    min-height: 100dvh;
+    min-height: calc(var(--vh, 1vh) * 100);
   }
 
   /* Hero section iOS fixes */
   section.relative.min-h-screen {
-    min-height: -webkit-fill-available;
+    height: 100dvh;
+    height: calc(var(--vh, 1vh) * 100);
+    min-height: 100dvh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    max-height: 100dvh;
+    max-height: calc(var(--vh, 1vh) * 100);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
   }
@@ -105,16 +121,26 @@ All colors MUST be HSL.
   section.relative.min-h-screen img {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  /* Hero content z-index */
+  section.relative.min-h-screen > * {
+    position: relative;
+    z-index: 10;
   }
 
   /* Fix navbar on iOS */
   nav.fixed {
     position: fixed;
-    top: 0;
+    top: env(safe-area-inset-top, 0);
     width: 100%;
-    z-index: 50;
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
+    z-index: 9999;
+    background: rgba(10, 15, 25, 0.6);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
   }
 
   /* Prevent zoom on iOS when tapping buttons/inputs */
@@ -125,13 +151,17 @@ All colors MUST be HSL.
   textarea {
     font-size: 16px;
   }
+
+  /* Body overflow fix */
+  body {
+    height: 100%;
+    overflow-x: hidden;
+  }
 }
 
 /* Safe area insets for notched iPhones */
 @supports (padding-top: env(safe-area-inset-top)) {
   body {
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
   }
