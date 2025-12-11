@@ -9,7 +9,6 @@ import { Award, BookOpen, Scale, Building, Briefcase, Users } from "lucide-react
 import lawyerPlaceholder from "@/assets/lawyer-placeholder.jpg"
 import girirajBardhar from "@/assets/giriraj-bardhar.jpg"
 import kapilBardhar from "@/assets/kapil-bardhar.jpg"
-import goverdhanBardhar from "@/assets/goverdhan-bardhar.jpg"
 
 const TeamSection = () => {
   const [selectedLawyer, setSelectedLawyer] = useState<number | null>(null)
@@ -130,25 +129,6 @@ const TeamSection = () => {
           "Building upon a rich family legacy dating back to 1950, handling comprehensive litigation with modern approach",
       },
     },
-    {
-      name: "Justice (Retd.) Goverdhan Bardhar",
-      title: "Retired High Court Judge",
-      designation: "Former Judge, Rajasthan High Court",
-      image: goverdhanBardhar,
-      shortBio: "A respected jurist from the Bardhar legal lineage who served as a Judge of the Rajasthan High Court.",
-      fullBio: {
-        overview:
-          "Justice (Retd.) Goverdhan Bardhar represents the judicial branch of the Bardhar family's distinguished legal legacy. His elevation to the bench of the Rajasthan High Court stands as a testament to the family's multi-generational impact on the Indian legal system.",
-        achievements: [
-          "Served as a Judge of the Rajasthan High Court",
-          "Represents the judicial branch of the Bardhar family's legal legacy",
-          "Part of the multi-generational impact described as a 'Judicial Institute'",
-          "Carried forward the family's tradition of judicial excellence",
-        ],
-        legacy:
-          "Justice Goverdhan Bardhar's distinguished judicial career exemplifies the Bardhar family's profound influence on the legal landscape of Rajasthan, contributing to the family being recognized as a 'Judicial Institute'.",
-      },
-    },
   ]
 
   return (
@@ -167,7 +147,7 @@ const TeamSection = () => {
           </div>
 
           {/* Team Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((lawyer, index) => (
               <Card
                 key={index}
