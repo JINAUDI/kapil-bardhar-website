@@ -74,6 +74,7 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-family: "Inter", sans-serif;
+    -webkit-text-size-adjust: 100%;
   }
 
   h1,
@@ -83,6 +84,56 @@ All colors MUST be HSL.
   h5,
   h6 {
     font-family: "Playfair Display", serif;
+  }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* Fix for iOS viewport height issue */
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+
+  /* Hero section iOS fixes */
+  section.relative.min-h-screen {
+    min-height: -webkit-fill-available;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  /* Ensure background image renders correctly on iOS */
+  section.relative.min-h-screen img {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  /* Fix navbar on iOS */
+  nav.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+
+  /* Prevent zoom on iOS when tapping buttons/inputs */
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+/* Safe area insets for notched iPhones */
+@supports (padding-top: env(safe-area-inset-top)) {
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
   }
 }
 
