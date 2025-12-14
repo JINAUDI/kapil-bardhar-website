@@ -8,9 +8,9 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Award, BookOpen, Scale, Building, Briefcase, Users } from "lucide-react"
 import lawyerPlaceholder from "@/assets/lawyer-placeholder.jpg"
 import girirajBardhar from "@/assets/giriraj-bardhar.jpg"
-import kapilBardhar from "@/assets/kapil-bardhar.jpeg"
-import ptDurgaLalBardhar from "@/assets/pt-durga-lal-bardhar.jpeg"
-import gyaneshwarBardhar from "@/assets/gyaneshwar-bardhar.jpeg"
+import kapilBardhar from "@/assets/KapilBardhar.jpeg"
+import ptDurgaLalBardhar from "@/assets/Pt.DurgaLal-Bardhar.jpeg"
+import gyaneshwarBardhar from "@/assets/GyaneshwarBardhar.jpeg"
 
 const TeamSection = () => {
   const [selectedLawyer, setSelectedLawyer] = useState<number | null>(null)

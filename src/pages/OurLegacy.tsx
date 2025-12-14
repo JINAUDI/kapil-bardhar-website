@@ -179,6 +179,10 @@ const OurLegacy = () => {
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+                      </div>
+                    </div>
                     <div className="bg-secondary/30 border border-border rounded-lg p-4 hover:border-primary transition-all">
                       <div className="flex items-start gap-3">
                         <BookOpen className="w-10 h-10 text-primary flex-shrink-0" />
@@ -197,11 +201,9 @@ const OurLegacy = () => {
                           <p className="text-sm text-muted-foreground">Collected digests and case commentaries on Revenue Law matters</p>
                           <p className="text-xs text-primary mt-1">Recognized as superior references in the field</p>
                         </div>
-                                      <img
-                                        src={legacyImagePath}
-                                        alt="Legacy"
-                                        className="rounded-lg shadow-2xl w-full h-[500px] object-cover"
-                                      />
+                    </div>
+                  </div>
+                </div>
                 {/* Poetry Books */}
                 <div className="space-y-4">
                   <div className="flex items-center gap-2 mb-4">
