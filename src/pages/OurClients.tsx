@@ -3,7 +3,7 @@
 import { Building2, ArrowLeft } from "lucide-react"
 import { useMemo, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { Button } from "@/components/ui/button"
+import { Button } from "../components/ui/button"
 
 const OurClients = () => {
   const navigate = useNavigate()

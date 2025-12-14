@@ -3,8 +3,8 @@
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { History, Users, BookOpen, Award, Heart, Scale, Book, Feather, ArrowLeft } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import legacyImage from "@/assets/legacy-image.jpg"
+import { Button } from "../components/ui/button"
+const legacyImagePath = "/legacy-image.jpg"
 
 const OurLegacy = () => {
   const navigate = useNavigate()
@@ -106,7 +106,7 @@ const OurLegacy = () => {
                 </div>
                 <div className="relative">
                   <img
-                    src={legacyImage}
+                    src={legacyImagePath}
                     alt="Legacy"
                     className="rounded-lg shadow-2xl w-full h-[500px] object-cover"
                   />
@@ -197,11 +197,11 @@ const OurLegacy = () => {
                           <p className="text-sm text-muted-foreground">Collected digests and case commentaries on Revenue Law matters</p>
                           <p className="text-xs text-primary mt-1">Recognized as superior references in the field</p>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
+                                      <img
+                                        src={legacyImagePath}
+                                        alt="Legacy"
+                                        className="rounded-lg shadow-2xl w-full h-[500px] object-cover"
+                                      />
                 {/* Poetry Books */}
                 <div className="space-y-4">
                   <div className="flex items-center gap-2 mb-4">
