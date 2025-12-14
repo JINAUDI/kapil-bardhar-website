@@ -9,6 +9,8 @@ import { Award, BookOpen, Scale, Building, Briefcase, Users } from "lucide-react
 import lawyerPlaceholder from "@/assets/lawyer-placeholder.jpg"
 import girirajBardhar from "@/assets/giriraj-bardhar.jpg"
 import kapilBardhar from "@/assets/kapil-bardhar.jpg"
+import durgaLalBardhar from "@/assets/durga-lal-bardhar.jpg"
+import gyaneshwarBardhar from "@/assets/gyaneshwar-bardhar.jpg"
 
 const TeamSection = () => {
   const [selectedLawyer, setSelectedLawyer] = useState<number | null>(null)
@@ -19,7 +21,7 @@ const TeamSection = () => {
       name: "Pt. Durga Lal Bardhar",
       title: "Founder & Patriarch (1924-2001)",
       designation: "MLA, Ex-Chairman Rajasthan Bar Council",
-      image: lawyerPlaceholder,
+      image: durgaLalBardhar,
       shortBio:
         "National-level jurist in Revenue Law, former MLA, and founder of the firm. Known as the 'People's Lawyer'.",
       fullBio: {
@@ -41,7 +43,7 @@ const TeamSection = () => {
       name: "Gyaneshwar Bardhar",
       title: "Senior Revenue Expert",
       designation: "B.A., LL.B. - 53 Years Standing",
-      image: lawyerPlaceholder,
+      image: gyaneshwarBardhar,
       shortBio: "Renowned Senior Revenue Expert with 53 years of practice specializing in Revenue Laws.",
       fullBio: {
         overview:
