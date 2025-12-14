@@ -61,7 +61,7 @@ const TeamSection = () => {
         courts:
           "Rajasthan High Court (Bench Jaipur), Board of Revenue, Revenue Appellate Authority, Divisional Commissioner Jaipur, Collector, SDO, and ACM",
         specialization:
-          "Civil, Criminal, Constitutional, Taxation, Labour, Company, Service Law, with special expertise in Revenue Laws",
+          "Revenue Law, Constitutional Law, with special expertise in Revenue Laws",
       },
     },
     {
@@ -89,7 +89,7 @@ const TeamSection = () => {
           "AIR1999Raj90: Gokul Vs. Rajasthan Muslim Wakf Board and Ors.",
         ],
         courts: "Rajasthan High Court (Bench Jaipur), Civil and Session Court Jaipur",
-        specialization: "Civil, Criminal, Revenue and Constitutional, Taxation, Labour, Company, Service Law",
+        specialization: "Civil, Criminal, Revenue Law, Constitutional Law, Labour Law, Company Law",
       },
     },
     {
@@ -107,13 +107,7 @@ const TeamSection = () => {
           "Managing Partner, Bardhar & Bardhar Associates",
           "Core Partner, Bardhar and Kaushik Law Firm (Team of 11 associates)",
         ],
-        panelStandingCounsel: [
-          "Standing Counsel - Jaipur Vidyut Vitran Nigam Limited (JVVNL)",
-          "Standing Counsel - Rajasthan Public Service Commission (RPSC)",
-          "Standing Counsel - Central Electricity Regulation Commission (CERC)",
-          "Standing Counsel - Pandit Deen Dayal Upadhyay University Sikar",
-          "Standing Counsel - Jaipur Development Authority (JDA)",
-        ],
+        // Panel & Standing Counsel section removed as per content update
         panelLawyer: [
           "Punjab National Bank (PNB)",
           "Oriental Insurance Company Ltd",
@@ -123,6 +117,12 @@ const TeamSection = () => {
           "Varun Beverages",
           "SBI General Insurance",
           "Reliance General Insurance",
+          // Added as Panel Lawyer Representations (content only)
+          "Jaipur Vidyut Vitran Nigam Limited (JVVNL)",
+          "Rajasthan Public Service Commission (RPSC)",
+          "Central Electricity Regulation Commission (CERC)",
+          "Pandit Deen Dayal Upadhyay University, Sikar",
+          "Jaipur Development Authority (JDA)",
         ],
         specialization: "Writs, Civil, Service, Arbitration, Banking, Property, and various miscellaneous matters",
         legacy:
